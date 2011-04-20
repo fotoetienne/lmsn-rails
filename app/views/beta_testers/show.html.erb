@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @beta_tester.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @beta_tester.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_beta_tester_path(@beta_tester) %> |
+<%= link_to 'Back', beta_testers_path %>

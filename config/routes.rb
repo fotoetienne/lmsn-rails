@@ -1,5 +1,7 @@
 LmsnRails::Application.routes.draw do
 
+  resources :beta_testers
+
   match '/signup',  :to => 'users#new'
 
   match '/contact', :to => 'pages#contact'
