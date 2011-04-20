@@ -9,8 +9,8 @@ class BetaTester < ActiveRecord::Base
 	validates :email,	:presence	=> true,
 				:format		=> { :with => email_regex },
 				:uniqueness	=> { :case_sensitive => false }
-	validates :code,	:presence	=> true,
-				:format		=> { :with => code_check }
+#	validates :code,	:presence	=> true,
+#				:format		=> { :with => code_check }
 
 
 end
