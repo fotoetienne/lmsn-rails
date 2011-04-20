@@ -2,7 +2,7 @@ LmsnRails::Application.routes.draw do
 
   resources :beta_testers
 
-  match '/signup',  :to => 'users#new'
+  match '/signup',  :to => 'beta_testers#new'
 
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'

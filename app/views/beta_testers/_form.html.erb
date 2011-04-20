@@ -1,7 +1,7 @@
 <%= form_for(@beta_tester) do |f| %>
   <% if @beta_tester.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@beta_tester.errors.count, "error") %> prohibited this beta_tester from being saved:</h2>
+      <h2>Oops! There's a problem:</h2>
 
       <ul>
       <% @beta_tester.errors.full_messages.each do |msg| %>
@@ -19,7 +19,10 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+  <div class="field">
+    <%= f.label "Invitation Code" %><br />
+    <%= f.text_field :code %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Sign Up" %>
   </div>
 <% end %>
