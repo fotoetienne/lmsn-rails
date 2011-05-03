@@ -1,5 +1,7 @@
 LmsnRails::Application.routes.draw do
 
+  devise_for :users
+
   resources :beta_testers
 
   match '/signup',  :to => 'beta_testers#new'
