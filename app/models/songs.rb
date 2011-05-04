@@ -12,4 +12,5 @@
 #
 
 class Songs < ActiveRecord::Base
+  belongs_to :dj
 end
