@@ -15,6 +15,7 @@ LmsnRails::Application.routes.draw do
   resources :users # remove later
   resources :djs do
     resources :songs
+    resources :song_requests
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
