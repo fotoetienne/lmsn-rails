@@ -18,4 +18,5 @@
 class Dj < ActiveRecord::Base
   belongs_to :user
   has_many :songs
+  has_many :song_requests
 end

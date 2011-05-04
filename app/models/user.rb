@@ -30,4 +30,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
 
   has_one :dj, :dependent => :destroy
+  has_one :singer, :dependent => :destroy
 end
