@@ -1,0 +1,7 @@
+if [ "$1" = "" ];then
+	branch="master"
+else
+	branch="$1"
+fi
+git push dev $1:master
+git push stage $1:master
