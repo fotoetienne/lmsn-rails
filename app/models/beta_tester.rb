@@ -1,3 +1,15 @@
+# == Schema Information
+# Schema version: 20110503231951
+#
+# Table name: beta_testers
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class BetaTester < ActiveRecord::Base
 	attr_accessor :code
 
