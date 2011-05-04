@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110504022336
+# Schema version: 20110504032245
 #
 # Table name: users
 #
@@ -17,6 +17,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :string(255)     default("singer"), not null
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
