@@ -1,5 +1,13 @@
 LmsnRails::Application.routes.draw do
 
+  get "songs/index"
+
+  get "songs/edit"
+
+  get "songs/show"
+
+  get "songs/new"
+
   devise_for :users
 
   resources :beta_testers
