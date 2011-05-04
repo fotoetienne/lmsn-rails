@@ -13,7 +13,9 @@ LmsnRails::Application.routes.draw do
   root :to => 'pages#home'
 
   resources :users # remove later
-
+  resources :djs do
+    resources :songs
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
