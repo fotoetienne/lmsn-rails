@@ -2,16 +2,12 @@
   <%= link_to logo, root_path %>
   <nav class="round">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Sign Up", signup_path %></li>
+      <% if user_signed_in? %>
+        <li>Signed in as <%= current_user.name %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %></li>
+      <% end %>
     </ul>
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-</div>
   </nav>
 </header>
