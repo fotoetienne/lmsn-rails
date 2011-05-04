@@ -10,11 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504022336) do
+ActiveRecord::Schema.define(:version => 20110504025211) do
 
   create_table "beta_testers", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "djs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "code"
+    t.boolean  "free"
+    t.decimal  "balance",      :default => 0.0
+    t.date     "list_updated"
+    t.string   "venue"
+    t.boolean  "public",       :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20110504022336) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",                                  :default => "singer", :null => false
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
