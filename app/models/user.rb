@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110503231951
+# Schema version: 20110504022336
 #
 # Table name: users
 #
@@ -16,6 +16,7 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  role                   :string(255)     default("singer"), not null
 #
 
 class User < ActiveRecord::Base
@@ -25,5 +26,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role
 end
