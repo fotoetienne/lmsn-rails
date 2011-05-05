@@ -11,8 +11,9 @@ LmsnRails::Application.routes.draw do
   match '/help',    :to => 'pages#help'
 
   root :to => 'pages#home'
-
+  
   resources :users # remove later
+
   resources :djs do
     resources :songs
     resources :song_requests

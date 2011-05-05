@@ -1,2 +1,6 @@
-<h1>Djs#index</h1>
-<p>Find me in app/views/djs/index.html.erb</p>
+<h1>Djs</h1>
+<ul>
+  <% @djs.each do |dj| %>
+    <li><%= link_to dj.name, dj_songs_path(dj.id) %></li>
+  <% end %>
+</ul>
