@@ -32,4 +32,14 @@ class User < ActiveRecord::Base
   validates :name,  :presence => true
   has_one :dj, :dependent => :destroy
   has_one :singer, :dependent => :destroy
+  
+  def name
+    if role == "dj"
+      dj.name
+    elsif role == "singer"
+      singer.name 
+    elsif role == "admin"
+      "Admin"
+    end
+  end
 end

@@ -20,8 +20,4 @@ class Dj < ActiveRecord::Base
   has_many :songs
   has_many :song_requests
   
-  def name
-    user.name
-  end
-
 end

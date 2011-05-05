@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504213012) do
+ActiveRecord::Schema.define(:version => 20110505203850) do
 
   create_table "beta_testers", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110504213012) do
     t.boolean  "public",       :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
