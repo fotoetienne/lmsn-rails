@@ -1,6 +1,13 @@
 Need
--song_request controller
 -djs controller
+  -index (list of djs)
+  -new (dj registration)
+  -show (dj about page/dj welsome page)
+  -edit (dj account settings)
+-song_request controller
+  -new (make request)
+  -index (dj view requests)
+  -
 -upload songlist
 -parse songlist
 
