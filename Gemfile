@@ -5,7 +5,8 @@ gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'will_paginate', '3.0.pre2'
 gem 'devise', '1.3.4'
 gem 'cancan', '1.6.4'
-gem "rails_admin", :git => 'git://github.com/sferik/rails_admin.git'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'paperclip', '~> 2.3'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
