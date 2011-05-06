@@ -17,7 +17,9 @@ LmsnRails::Application.routes.draw do
   resources :djs do
     resources :songs
     resources :song_requests
+    match '/artists', :to =>'songs#artists_index'
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

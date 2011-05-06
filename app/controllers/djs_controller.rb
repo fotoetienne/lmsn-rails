@@ -1,6 +1,6 @@
 class DjsController < ApplicationController
   def index
-    @djs = Dj.all
+    @djs = Dj.find(:all, :select => 'name, id', :order => 'name')
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @djs }
