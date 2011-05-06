@@ -18,7 +18,7 @@ class SongsController < ApplicationController
   def artists_show
     @dj_id = params[:dj_id]
     @dj = Dj.find_by_id(@dj_id)
-    @songs = Song.find_all_by_dj_id(@dj_id, :select => 'distinct artist', :order => 'artist')
+    @songs = Song.find_all_by_dj_id_and_artist(@dj_id, params[:artist], :select => 'artist, title, id', :order => 'artist, title')
     render_formats 
   end
 

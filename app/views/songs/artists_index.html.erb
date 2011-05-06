@@ -1,9 +1,9 @@
-<h1><%= @dj.name %>'s Song List</h1>
+<h1><%= @dj.name %>'s Song List | Artists</h1>
 
 <ul class="songs">
   <% @songs.each do |song| %>
     <li>
-      <%= song.artist %>
+      <%= link_to song.artist, dj_songs_by_artist_path(@dj,song.artist) %>
     </li>
   <% end %>
 </ul>
