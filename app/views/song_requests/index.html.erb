@@ -1,0 +1,33 @@
+<h1>Listing song_requests</h1>
+
+<table>
+  <tr>
+    <th>Dj</th>
+    <th>Song</th>
+    <th>Singer</th>
+    <th>Singer name</th>
+    <th>Key</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @song_requests.each do |song_request| %>
+  <tr>
+    <td><%= song_request.dj %></td>
+    <td><%= song_request.song %></td>
+    <td><%= song_request.singer %></td>
+    <td><%= song_request.singer_name %></td>
+    <td><%= song_request.key %></td>
+    <td><%= song_request.notes %></td>
+    <td><%= link_to 'Show', song_request %></td>
+    <td><%= link_to 'Edit', edit_song_request_path(song_request) %></td>
+    <td><%= link_to 'Destroy', song_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Song request', new_song_request_path %>

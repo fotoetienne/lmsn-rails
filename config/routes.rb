@@ -1,5 +1,7 @@
 LmsnRails::Application.routes.draw do
 
+  resources :song_requests
+
   devise_for :users
 
   resources :beta_testers
