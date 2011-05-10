@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110504032245
+# Schema version: 20110509220533
 #
 # Table name: djs
 #
@@ -13,6 +13,7 @@
 #  public       :boolean         default(TRUE)
 #  created_at   :datetime
 #  updated_at   :datetime
+#  name         :string(255)
 #
 
 class Dj < ActiveRecord::Base
