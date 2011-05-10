@@ -1,2 +1,18 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @song.artist %> - <%= @song.title %></h1>
+<%= form_for @song.make_request do |f| %>
+  <div class="field">
+    <%= f.label "Your Name" %><br />
+    <%= f.text_field :singer_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Key Change Request" %><br />
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.label "Notes" %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit "LetMeSingNow!" %>
+  </div>
+<% end %>

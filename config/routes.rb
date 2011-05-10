@@ -17,8 +17,9 @@ LmsnRails::Application.routes.draw do
   resources :users # remove later
 
   resources :djs do
-    resources :songs
-    resources :song_requests
+    resources :songs do
+      match 'request', :to => 'song_requests#new'
+    end
     match '/artists', :to =>'songs#artists_index'
     match '/artists/:artist', :to =>'songs#artists_show', :as => 'songs_by_artist'
   end
