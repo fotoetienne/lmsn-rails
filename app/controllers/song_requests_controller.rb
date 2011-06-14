@@ -53,6 +53,21 @@ class SongRequestsController < ApplicationController
     end
   end
 
+
+  def api_request
+    @song_request = SongRequest.new(params[:song_request])
+
+    respond_to do |format|
+      if @song_request.save
+        format.html { redirect_to(@song_request, :notice => 'Song request was successfully created.') }
+        format.xml  { render :xml => @song_request, :status => :created, :location => @song_request }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @song_request.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
   # PUT /song_requests/1
   # PUT /song_requests/1.xml
   def update

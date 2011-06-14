@@ -1,6 +1,7 @@
 LmsnRails::Application.routes.draw do
 
   resources :song_requests
+  match 'api/request', :to => 'song_requests#api_request'
 
   devise_for :users
 
