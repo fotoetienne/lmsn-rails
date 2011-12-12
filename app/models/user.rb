@@ -32,9 +32,9 @@ class User < ActiveRecord::Base
   has_one :singer, :dependent => :destroy
   
   def name
-    if role == "dj"
+    if role == "dj" and !dj.nil?
       dj.name || "Dj"
-    elsif role == "singer"
+    elsif role == "singer" and !singer.nil?
       singer.name || "Singer"
     elsif role == "admin"
       "Admin"
