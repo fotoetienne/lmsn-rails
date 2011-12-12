@@ -1,3 +1,5 @@
+require 'csv'
+
 module ApplicationHelper
 
   def logo
@@ -11,6 +13,27 @@ module ApplicationHelper
       base_title
     else
       "#{base_title} | #{@title}"
+    end
+  end
+
+  def parse_csv 
+    csv_text = File.read('public/sample.csv')
+    #csv = CSV.parse(csv_text, :headers => true)
+  
+    CSV.open('public/sample.csv', 'r').each do |row|
+      this_song = {
+        :artist => row[0],
+        :title => row[1],
+        :song_id => row[2]}
+      if this_song[:artist].nil?
+         this_song[:artist] = "Unknown Artist" 
+      end
+      if !this_song[:title].nil? && !this_song[:song_id].nil?
+        puts this_song[:artist]+' - '+this_song[:title]
+        Song.create(:artist => this_song[:artist],
+                    :title => this_song[:title],
+                    :dj_id => 3)
+      end
     end
   end
 end
